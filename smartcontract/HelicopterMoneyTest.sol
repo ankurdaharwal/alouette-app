@@ -1,6 +1,7 @@
 pragma solidity ^0.6.3;
 
 contract HelicopterMoney{
+  
   struct Wallet{
     bool isCitizen; // false: company 
     bool isValid; // true: valid, false: invalid
@@ -143,7 +144,7 @@ contract HelicopterMoney{
   function burnFunds(uint percentageBurn) public {
       
     for (uint i=0; i<listCitizensWallets.length; i++) {
-      citizensWallets[listCitizensWallets[i]].balance *= percentageBurn / 100;
+      citizensWallets[listCitizensWallets[i]].balance = (citizensWallets[listCitizensWallets[i]].balance * (100 - (percentageBurn / 100))) / 100;
     }
   }
   

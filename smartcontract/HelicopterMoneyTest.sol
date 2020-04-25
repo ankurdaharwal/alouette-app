@@ -68,14 +68,24 @@ contract HelicopterMoney{
     // check transferAmount overflow and is positive
     // check numIDCard and verificationKey
      
-    // check citizen wallet exists
     require(citizensWallets[numIDCard].exists, "citizen id wallet does not exist");
     require(companiesWallets[destinationNumCompany].exists, "destination company does not exist");
     require(citizensWallets[numIDCard].balance >= transferAmount, "insufficient balance");
     
     citizensWallets[numIDCard].balance -= transferAmount;
     companiesWallets[destinationNumCompany].balance += transferAmount;
-
+  }
+  
+  function sendFundsAsTax(bytes32 numCompany, uint256 verificationKey, uint256 transferAmount) public {
+      
+    // check transferAmount overflow and is positive
+    // check numCompany and verificationKey
+     
+    require(companiesWallets[numCompany].exists, "company does not exist");
+    require(companiesWallets[numCompany].balance >= transferAmount, "insufficient balance");
+    
+    companiesWallets[numCompany].balance -= transferAmount;
+    companiesWallets[numCompany].sentToTax += transferAmount;
   }
 
   
@@ -129,42 +139,14 @@ contract HelicopterMoney{
     }
   }
   
+  // percentageBurn is the percentage to burn in basis points. 1500 = 15%
+  function burnFunds(uint percentageBurn) public {
+      
+    for (uint i=0; i<listCitizensWallets.length; i++) {
+      citizensWallets[listCitizensWallets[i]].balance *= percentageBurn / 100;
+    }
+  }
+  
   
 }
-  
-  
-  
-  
-  
-  
-  
-  
-/*
-  function creationOfIndividualWallet(string memory ID, uint balance) public {
-    balancesUsers[ID] = wallet("citizen", true, ID, balance,0);
-  }
-
-  function creationOfMerchantWallet(string memory ID, uint balance) public {
-    balancesBusiness[ID] = wallet("business", true, ID, balance,0);
-  }
-
-  function transfertToBusiness(string memory personalID, string memory businessID, uint amount) public {
-    if(balancesUsers[personalID].balance >= amount){
-      balancesUsers[personalID].balance -= amount;
-      balancesBusiness[businessID].balance += amount;
-    }
-  }
-
-  function transfertToTax(string memory personalID, uint amount) public {
-    if(balancesBusiness[personalID].isInitiated == true && balancesBusiness[personalID].balance >= amount){
-      balancesBusiness[personalID].balance -= amount;
-      balancesBusiness[personalID].sentToTax += amount;
-    }
-  }
-
-
-  function returntestValue (uint testValue) public view returns(uint) {
-    		return testValue;
-  }
-  */
 

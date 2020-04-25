@@ -8,6 +8,7 @@ contract HelicopterMoney{
     bytes32 numCompany;
     uint256 balance; // balance in € * 100
     uint256 sentToTax;
+    bool exists; // so easy to check if a wallet exists
   }
   
   mapping(bytes32 => Wallet) citizensWallets;
@@ -36,7 +37,8 @@ contract HelicopterMoney{
         numIDCard: numIDCard,
         numCompany: '',
         balance: initialBalance,
-        sentToTax: 0
+        sentToTax: 0,
+        exists: true
       }
     );
   }
@@ -48,17 +50,43 @@ contract HelicopterMoney{
     
     listCompaniesWallets.push(numCompany);
     
-    citizensWallets[numCompany] = Wallet(
+    companiesWallets[numCompany] = Wallet(
       {
         isCitizen: false,
         isValid: true,
         numIDCard: '',
         numCompany: numCompany,
         balance: 0,
-        sentToTax: 0
+        sentToTax: 0,
+        exists: true
       }
     );
   }
+  
+  function transferFromCitizenToCompany(bytes32 numIDCard, uint256 verificationKey, uint256 transferAmount, bytes32 destinationNumCompany) public {
+      
+    // check transferAmount overflow and is positive
+    // check numIDCard and verificationKey
+     
+    // check citizen wallet exists
+    require(citizensWallets[numIDCard].exists, "citizen id wallet does not exist");
+    require(companiesWallets[destinationNumCompany].exists, "destination company does not exist");
+    require(citizensWallets[numIDCard].balance >= transferAmount, "insufficient balance");
+    
+    citizensWallets[numIDCard].balance -= transferAmount;
+    companiesWallets[destinationNumCompany].balance += transferAmount;
+
+  }
+  
+  
+  /*
+  company address
+Amount to pay
+Checks:
+Is @ a company address ?
+Does Tx. Init a individual @ ?
+Does Tx. Init have enough fund ?
+*/
   
   
   // below functions are limited to admin and authorities
@@ -68,9 +96,9 @@ contract HelicopterMoney{
     return listCitizensWallets;
   }
   
-  function getCitizenWallet(bytes32 numIDCard) public view returns (bool, bool, bytes32, uint256) {
+  function getCitizenWallet(bytes32 numIDCard) public view returns (bool, bool, bool, bytes32, uint256) {
       
-    return (citizensWallets[numIDCard].isCitizen, citizensWallets[numIDCard].isValid, citizensWallets[numIDCard].numIDCard, citizensWallets[numIDCard].balance);
+    return (citizensWallets[numIDCard].exists, citizensWallets[numIDCard].isCitizen, citizensWallets[numIDCard].isValid, citizensWallets[numIDCard].numIDCard, citizensWallets[numIDCard].balance);
   }
   
   function getAllCompaniesWallets() public view returns (bytes32[] memory) {
@@ -78,9 +106,9 @@ contract HelicopterMoney{
     return listCompaniesWallets;
   }
   
-  function getCompanyWallet(bytes32 numCompany) public view returns (bool, bool, bytes32, uint256, uint256) {
+  function getCompanyWallet(bytes32 numCompany) public view returns (bool, bool, bool, bytes32, uint256, uint256) {
       
-    return (companiesWallets[numCompany].isCitizen, companiesWallets[numCompany].isValid, companiesWallets[numCompany].numCompany, companiesWallets[numCompany].balance, companiesWallets[numCompany].sentToTax);
+    return (companiesWallets[numCompany].exists, companiesWallets[numCompany].isCitizen, companiesWallets[numCompany].isValid, companiesWallets[numCompany].numCompany, companiesWallets[numCompany].balance, companiesWallets[numCompany].sentToTax);
   }
   
   function validationOfCitizensWallets(bytes32[] memory listCitizensWalletsToValidate) public {
@@ -113,7 +141,6 @@ contract HelicopterMoney{
   
   
 }
-  
   
   
   

@@ -77,17 +77,7 @@ contract HelicopterMoney{
     companiesWallets[destinationNumCompany].balance += transferAmount;
 
   }
-  
-  
-  /*
-  company address
-Amount to pay
-Checks:
-Is @ a company address ?
-Does Tx. Init a individual @ ?
-Does Tx. Init have enough fund ?
-*/
-  
+
   
   // below functions are limited to admin and authorities
   

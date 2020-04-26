@@ -1,10 +1,9 @@
 # ALOUETTE
-![Alouette](https://github.com/alouette-admin/alouette-app/blob/master/images/alouette-icon.png?raw=true)
+
 **RAPID DEPLOYMENT OF HELICOPTER MONEY** :helicopter: :money_with_wings: 
 
-### DEMO ###
+## DEMO
+
 <figure class="video_container">
-  <video controls="true" allowfullscreen="true" poster="https://github.com/alouette-admin/alouette-app/blob/master/images/alouette-icon.png">
-    <source src="https://github.com/alouette-admin/alouette-app/blob/master/demo/alouette_demo.mp4" type="video/mp4">
-  </video>
+  <iframe src="https://github.com/alouette-admin/alouette-app/blob/master/demo/alouette_demo.mp4" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>

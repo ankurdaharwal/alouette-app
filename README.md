@@ -3,9 +3,7 @@
 ___
 ## In Action
 
-![Alouette](https://github.com/alouette-admin/alouette-app/blob/master/images/alouette.ico "Alouette Helicopter Money")
-
-[Alouette Application](hellicopter.bubbleapps.io)
+[![Alouette](https://github.com/alouette-admin/alouette-app/blob/master/images/alouette.ico "Alouette Helicopter Money")](hellicopter.bubbleapps.io)
 ___
 ## DEMO
 

@@ -3,8 +3,6 @@
 ___
 ## In Action
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-
 ![Alouette](https://github.com/alouette-admin/alouette-app/blob/master/images/alouette.ico "Alouette Helicopter Money")
 
 [Alouette Application](hellicopter.bubbleapps.io)

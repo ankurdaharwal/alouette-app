@@ -1,7 +1,7 @@
 # ALOUETTE
 **RAPID DEPLOYMENT OF HELICOPTER MONEY** :helicopter: :money_with_wings: 
 ___
-## In Action
+## In Action (View on Mobile)
 
 [![Alouette](https://github.com/alouette-admin/alouette-app/blob/master/images/alouette.ico "Alouette Helicopter Money")](https://hellicopter.bubbleapps.io)
 ___

@@ -3,7 +3,7 @@
 ___
 ## In Action
 
-[![Alouette](https://github.com/alouette-admin/alouette-app/blob/master/images/alouette.ico "Alouette Helicopter Money")](hellicopter.bubbleapps.io)
+[![Alouette](https://github.com/alouette-admin/alouette-app/blob/master/images/alouette.ico "Alouette Helicopter Money")](https://hellicopter.bubbleapps.io)
 ___
 ## DEMO
 

@@ -4,7 +4,7 @@
 ___
 ## What does it do?
 
-![Alouette](https://github.com/alouette-admin/alouette-app/blob/master/images/alouette-flow.png "Alouette Helicopter Money")
+![Alouette](https://github.com/alouette-admin/alouette-app/blob/master/images/Alouette_flow.png "Alouette Helicopter Money")
 
 ___
 ## In Action (View on Mobile)

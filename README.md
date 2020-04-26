@@ -6,6 +6,6 @@
 
 <!-- blank line -->
 <figure class="video_container">
-  <iframe src="https://github.com/alouette-admin/alouette-app/blob/master/demo/alouette_demo" frameborder="0" allowfullscreen="true"> </iframe>
+  <iframe src="https://www.youtube.com/watch?v=g6mDSHAfa4M" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
 <!-- blank line -->

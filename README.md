@@ -1,5 +1,5 @@
 # ALOUETTE
-**RAPID DEPLOYMENT OF HELICOPTER MONEY** :helicopter: :money_with_wings: 
+**RAPID DEPLOYMENT OF HELICOPTER MONEY ACROSS EUROPE** :helicopter: :money_with_wings: 
 
 ___
 ## What does it do?

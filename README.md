@@ -9,6 +9,8 @@
 
 <!-- blank line -->
 <figure class="video_container">
-  <iframe src="https://www.youtube.com/embed/BNF1fHBCGi0" frameborder="0" allowfullscreen="true"> </iframe>
+  <video controls="true" allowfullscreen="true" poster="path/to/poster_image.png">
+    <source src="https://www.youtube.com/embed/BNF1fHBCGi0" type="video/mp4">
+  </video>
 </figure>
 <!-- blank line -->

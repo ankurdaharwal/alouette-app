@@ -1,3 +1,3 @@
-# ALLOUETTE :helicopter: :money-with-wings:
+# ALLOUETTE :helicopter: :money_with_wings:
 
 **RAPID DEPLOYMENT OF HELICOPTER MONEY**
